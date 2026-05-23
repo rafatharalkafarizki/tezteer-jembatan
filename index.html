@@ -1,157 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Stream Portal | Community Verified Access</title>
-    
-    <!-- OG TAGS UNTUK SOSIAL MEDIA -->
-    <meta property="og:site_name" content="Portal Media USA" />
-    <meta property="og:title" content="Shared Community Content - Secure Access" /> 
-    <meta property="og:description" content="View shared media via secure cloud delivery. High-speed streaming enabled for verified regions." />
-    <meta property="og:image" content="https://vidley.pw/tombolplay.jpg" />
-    <meta property="og:type" content="website" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+<title>Mogoflox | Watch Full Content</title>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
-        
-        body { 
-            background-color: #050505; 
-            color: #ffffff; 
-            font-family: 'Inter', sans-serif;
-            /* user-select dan touch-action dihapus agar kontrol video bisa disentuh di HP */
-        }
-        
-        .glass-card {
-            background: rgba(20, 20, 22, 0.95);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
-        }
+<!-- SEO -->
+<meta name="description" content="Watch the full content on Mogoflox with a fast, secure, and mobile-friendly experience." />
 
-        .ad-slot {
-            width: 320px;
-            height: 50px;
-            margin: 0 auto;
-            background: rgba(255,255,255,0.03);
-            border-radius: 6px;
-            border: 1px solid rgba(255,255,255,0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
+<!-- Open Graph (Facebook) -->
+<meta property="og:title" content="Mogoflox | Watch Full Content" />
+<meta property="og:description" content="Open the full content safely and continue to the main website." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://mogoflox.it.com/thumbnail.jpg" />
+<meta property="og:url" content="https://mogoflox.it.com/" />
 
-        /* Styling Video Profesional */
-        .video-container {
-            width: 100%;
-            /* Tinggi fleksibel tapi maksimal 70% dari tinggi layar agar tidak perlu scroll jauh */
-            height: auto;
-            max-height: 70vh; 
-            background-color: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
 
-        video {
-            width: 100%;
-            height: 100%;
-            max-height: 70vh;
-            object-fit: contain; /* Memastikan video utuh tidak terpotong */
-            outline: none;
-        }
+<!-- Favicon -->
+<link rel="icon" href="https://mogoflox.it.com/favicon.ico" />
 
-        /* Scrollbar tersembunyi tapi tetap bisa scroll */
-        ::-webkit-scrollbar { width: 0px; background: transparent; }
-    </style>
-    <script src="POPUNDERADSTERRA"></script>
+<!-- Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f4f6f9;
+    color:#111827;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:480px;
+}
+
+.card{
+    background:#ffffff;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+}
+
+.thumbnail{
+    width:100%;
+    aspect-ratio:16/9;
+    background:url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop') center/cover;
+}
+
+.content{
+    padding:28px;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#eef2ff;
+    color:#4338ca;
+    padding:8px 14px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:18px;
+}
+
+h1{
+    font-size:28px;
+    line-height:1.2;
+    margin-bottom:14px;
+    font-weight:800;
+    color:#111827;
+}
+
+p{
+    font-size:15px;
+    line-height:1.7;
+    color:#4b5563;
+    margin-bottom:24px;
+}
+
+.features{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-bottom:28px;
+}
+
+.feature{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:14px;
+    color:#374151;
+}
+
+.icon{
+    width:34px;
+    height:34px;
+    border-radius:10px;
+    background:#f3f4f6;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:15px;
+}
+
+.btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    padding:16px;
+    border-radius:14px;
+    background:#111827;
+    color:#ffffff;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:700;
+    transition:.2s ease;
+}
+
+.btn:hover{
+    transform:translateY(-1px);
+    opacity:.95;
+}
+
+.notice{
+    margin-top:18px;
+    font-size:12px;
+    color:#6b7280;
+    text-align:center;
+    line-height:1.6;
+}
+
+.footer{
+    margin-top:18px;
+    text-align:center;
+    font-size:13px;
+    color:#6b7280;
+}
+
+.footer a{
+    color:#374151;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+.footer a:hover{
+    text-decoration:underline;
+}
+
+@media(max-width:480px){
+    h1{
+        font-size:24px;
+    }
+
+    .content{
+        padding:22px;
+    }
+}
+</style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-3 sm:p-6 md:p-8">
+<body>
 
-    <!-- KARTU UTAMA (Lebih lebar di Desktop, pas di HP) -->
-    <div class="w-full max-w-2xl glass-card rounded-2xl overflow-hidden relative flex flex-col transition-all duration-300">
-        
-        <!-- AREA VIDEO -->
-        <div id="videoArea" class="video-container relative">
-            
-            <!-- PEMUTAR VIDEO ASLI -->
-            <!-- playsinline memastikan video diputar langsung di halaman pada iOS (tidak full screen paksa) -->
-            <video id="mainPlayer" controls playsinline preload="metadata">
-                Your browser does not support the video tag.
-            </video>
+<div class="container">
 
-            <!-- PESAN ERROR -->
-            <div id="errorMsg" class="hidden absolute flex flex-col items-center justify-center w-full h-full bg-[#0a0a0a]">
-                <i data-lucide="video-off" class="w-10 h-10 text-gray-600"></i>
+    <div class="card">
+
+        <!-- Thumbnail -->
+        <div class="thumbnail"></div>
+
+        <div class="content">
+
+            <div class="badge">
+                🔥 Trending Content
             </div>
-        </div>
 
-        <!-- AREA TINDAKAN & IKLAN -->
-        <div id="actionBox" class="p-6 sm:p-8 bg-gradient-to-b from-[#0a0a0c] to-[#050505] flex flex-col items-center">
-            
-            <!-- TOMBOL TRENDING (Desain Premium) -->
-            <a href="SMARTLINK/GROUPFACEBOOK" target="_blank" rel="noopener noreferrer" 
-               class="group relative flex items-center gap-3 mb-8 px-8 py-3.5 bg-red-600/10 hover:bg-red-600/20 rounded-xl border border-red-500/30 transition-all duration-300 hover:shadow-[0_0_25px_rgba(220,38,38,0.2)] hover:-translate-y-0.5 text-decoration-none">
-                <i data-lucide="flame" class="w-5 h-5 text-red-500 group-hover:scale-110 transition-transform"></i>
-                <span class="text-sm font-black tracking-[0.2em] text-red-500 uppercase">Trending X Video</span>
+            <h1>Watch The Full Video</h1>
+
+            <p>
+                Continue to the official Mogoflox website to watch the complete content with a secure and optimized viewing experience.
+            </p>
+
+            <div class="features">
+
+                <div class="feature">
+                    <div class="icon">⚡</div>
+                    Fast mobile experience
+                </div>
+
+                <div class="feature">
+                    <div class="icon">🔒</div>
+                    Secure official website
+                </div>
+
+                <div class="feature">
+                    <div class="icon">📱</div>
+                    Optimized for all devices
+                </div>
+
+            </div>
+
+            <!-- DIRECT LINK -->
+            <a id="continueBtn" class="btn" href="#">
+                ▶ Watch Now
             </a>
 
-            <!-- SLOT IKLAN -->
-            <div class="ad-slot">
-                <!-- IKLAN BANNER ADSTERRA -->
-                <script type="text/javascript">
-                    atOptions = {
-                        'key' : 'KEYADSTERRABANNER',
-                        'format' : 'iframe',
-                        'height' : 50,
-                        'width' : 320,
-                        'params' : {}
-                    };
-                </script>
-                <script type="text/javascript" src="ADSTERRABANNER"></script>
+            <div class="notice">
+                By continuing, you will be redirected to the official Mogoflox website.
             </div>
+
         </div>
-        
+
     </div>
 
-    <script>
-        lucide.createIcons();
+    <!-- Footer -->
+    <div class="footer">
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        |
+        <a href="/terms.html">Terms</a>
+        |
+        <a href="/contact.html">Contact</a>
+    </div>
 
-        // Ambil ID dari URL
-        let videoId = window.location.pathname.split('/').pop().trim();
-        if (videoId === "index.html" || videoId === "" || videoId === "bridge.html") videoId = "";
+</div>
 
-        const mainPlayer = document.getElementById("mainPlayer");
-        const errorMsg = document.getElementById("errorMsg");
+<script>
+/*
+=========================================
+SAFE DYNAMIC ROUTING
+=========================================
+- Tidak memakai auto redirect
+- Tidak memakai hidden redirect
+- User klik manual
+- Lebih aman untuk Facebook
+=========================================
+*/
 
-        if(/^[a-zA-Z0-9_.-]{3,80}$/.test(videoId) && videoId !== ""){
-            let filename = videoId.includes('.') ? videoId : videoId + ".mp4";
-            let videoUrl = "https://cdn.videy.co/" + encodeURIComponent(filename);
-            
-            mainPlayer.src = videoUrl;
-            
-            mainPlayer.addEventListener("error", () => {
-                mainPlayer.classList.add("hidden");
-                errorMsg.classList.remove("hidden");
-            });
-        } else {
-            mainPlayer.classList.add("hidden");
-            errorMsg.classList.remove("hidden");
-        }
-    </script>
+const path = window.location.pathname;
+const segments = path.split('/').filter(Boolean);
 
-    <!-- Histats.com START -->
-    <script type="text/javascript">var _Hasync= _Hasync|| [];
-    _Hasync.push(['Histats.start', '1,KODEHISTATS,4,0,0,0,00010000']);
-    _Hasync.push(['Histats.fasi', '1']);
-    _Hasync.push(['Histats.track_hits', '']);
-    (function() {
-    var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-    hs.src = ('//s10.histats.com/js15_as.js');
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-    })();</script>
+let rawId = segments.pop() || '';
+
+const cleanId = rawId.includes('.')
+    ? rawId.substring(0, rawId.lastIndexOf('.'))
+    : rawId;
+
+/*
+=========================================
+MAIN DOMAIN
+=========================================
+*/
+
+const mainDomain = 'https://mogoflox.it.com/';
+
+/*
+=========================================
+FINAL DESTINATION
+=========================================
+*/
+
+const finalURL = cleanId
+    ? mainDomain + cleanId
+    : mainDomain;
+
+/*
+=========================================
+SET BUTTON LINK
+=========================================
+*/
+
+document.getElementById('continueBtn').href = finalURL;
+</script>
+
 </body>
 </html>
