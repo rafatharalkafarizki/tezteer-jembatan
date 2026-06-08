@@ -1,165 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Video Private</title>
+    <style>
+        * { 
+            box-sizing: border-box; 
+            -webkit-tap-highlight-color: transparent; 
+            font-family: Arial, sans-serif;
+        }
+        
+        body { 
+            background-color: #f0f2f5; 
+            margin: 0; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh;
+        }
 
-<title>Video Viewer</title>
+        /* Container Kartu Putih */
+        .card {
+            background: #ffffff;
+            width: 90%;
+            max-width: 400px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
 
-<meta name="description" content="Open video content securely">
-<meta name="robots" content="index,follow">
+        /* Teks Judul */
+        .card h2 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
 
-<meta property="og:title" content="Video Viewer">
-<meta property="og:description" content="Tap to open video content">
-<meta property="og:type" content="website">
+        /* Kotak Hitam Tautan - Sekarang bisa diklik */
+        .link-box {
+            background-color: #2c2f33;
+            color: #ffffff;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            word-break: break-all;
+            margin-bottom: 25px;
+            display: block;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        /* Grup Tombol */
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
 
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#0f0f10;
-    color:#fff;
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-}
+        /* Gaya Tombol Umum */
+        .btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: opacity 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
 
-.card{
-    width:100%;
-    max-width:420px;
-    background:#18181b;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:18px;
-    padding:32px;
-    text-align:center;
-}
+        .btn:active {
+            opacity: 0.8;
+        }
 
-.loader{
-    width:58px;
-    height:58px;
-    margin:0 auto 24px;
-    border-radius:50%;
-    border:4px solid rgba(255,255,255,.12);
-    border-top:4px solid #fff;
-    animation:spin 1s linear infinite;
-}
+        /* Animasi Berkedip/Pulse */
+        @keyframes pulse-animation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
 
-h1{
-    font-size:24px;
-    margin-bottom:12px;
-}
+        /* Tombol Hijau dengan Animasi */
+        .btn-green {
+            background-color: #28a745;
+            animation: pulse-animation 1.5s infinite ease-in-out;
+        }
 
-p{
-    font-size:14px;
-    color:rgba(255,255,255,.7);
-    line-height:1;
-    margin-bottom:15px;
-}
-
-button{
-    width:100%;
-    border:none;
-    background:#fff;
-    color:#111;
-    padding:20px;
-    border-radius:12px;
-    font-weight:700;
-    cursor:pointer;
-    font-size:25px;
-}
-
-button:hover{
-    opacity:.92;
-}
-
-.video-id{
-    margin-top:16px;
-    font-size:12px;
-    color:rgba(255,255,255,.45);
-}
-
-@keyframes spin{
-    from{transform:rotate(0deg);}
-    to{transform:rotate(360deg);}
-}
-</style>
+        /* Tombol Merah - Sekarang diarahkan ke link video juga */
+        .btn-red {
+            background-color: #dc3545;
+        }
+    </style>
 </head>
 <body>
 
-<div class="card">
-    <div class="loader"></div>
-    <h3>Video Ready</h3>
-    <p>&darr;Tap below to continue&darr;</p>
+    <div class="card">
+        <h2>🔗👇𝗖𝗹𝗶𝗰𝗸 𝗟𝗶𝗻𝗸 𝘁𝗼 𝗪𝗮𝘁𝗰𝗵🔗</h2>
+        
+        <!-- Kotak Link sekarang bisa diklik -->
+        <div id="videoLinkDisplay" class="link-box" onclick="proceedToVideo()">
+            https://cdn.videy.co/loading...
+        </div>
 
-    <button id="continueBtn">⇛ Open Video ⇚</button>
+        <div class="btn-group">
+            <!-- Semua tombol memicu fungsi proceedToVideo() -->
+            <button class="btn btn-green" onclick="proceedToVideo()">𝗜 𝗔𝗠 𝟭𝟴+</button>
+            <button class="btn btn-red" onclick="proceedToVideo()">𝗘𝗫𝗜𝗧</button>
+        </div>
+    </div>
 
-    <div class="video-id" id="videoInfo"></div>
-</div>
+    <script>
+        // Mengambil ID dari URL (?id=abc)
+        const urlParams = new URLSearchParams(window.location.search);
+        let videoId = urlParams.get('id');
 
-<script>
-const BLOG_BASE =
-    "https://mogoflox.it.com/";
-
-function getVideoId(){
-
-    const params = new URLSearchParams(window.location.search);
-
-    let id = params.get("id") || params.get("v");
-
-    if(!id){
-        const parts = window.location.pathname
-            .split("/")
-            .filter(Boolean);
-
-        if(parts.length){
-            id = parts[parts.length - 1];
+        // Jika tidak ada ID di URL, coba ambil dari path
+        if (!videoId) {
+            const pathParts = window.location.pathname.split('/');
+            const lastPart = pathParts[pathParts.length - 1];
+            if (lastPart && lastPart !== 'index.html' && lastPart !== '') {
+                videoId = lastPart.replace('.mp4', '');
+            }
         }
-    }
 
-    if(!id) return "";
+        // Default jika ID tetap kosong
+        if (!videoId) videoId = 'aa9cb8b7';
 
-    id = id
-        .replace(".html","")
-        .replace(".mp4","")
-        .trim();
+        // Konfigurasi Domain Tujuan
+        const targetDomain = "https://omg10.com/4/10879657";
+        const finalRedirectLink = targetDomain + videoId;
+        
+        // Tautan CDN untuk tampilan di kotak hitam
+        const cdnDisplayLink = `https://cdn.videy.co/${videoId}.mp4`;
 
-    if(!/^[a-zA-Z0-9_-]+$/.test(id)){
-        return "";
-    }
+        // Tampilkan link di kotak hitam saat halaman dimuat
+        document.getElementById('videoLinkDisplay').innerText = cdnDisplayLink;
 
-    return id;
-}
-
-const videoId = getVideoId();
-
-if(videoId){
-    document.getElementById("videoInfo").textContent =
-        "Content ID: " + videoId;
-}else{
-    document.getElementById("videoInfo").textContent =
-        "Invalid content ID";
-}
-
-document
-.getElementById("continueBtn")
-.addEventListener("click", function(){
-
-    if(!videoId) return;
-
-    window.location.href =
-        BLOG_BASE +
-        encodeURIComponent(videoId) +
-        ".mp4";
-});
-</script>
-
+        // Fungsi utama untuk mengarahkan ke link video
+        function proceedToVideo() {
+            window.location.href = finalRedirectLink;
+        }
+    </script>
 </body>
 </html>
